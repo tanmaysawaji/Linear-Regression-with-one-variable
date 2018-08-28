@@ -5,6 +5,8 @@ data = load('examples.txt');
 X = data(:, 1); y = data(:, 2);     % x stores the input features and y stores the output feature
 m = length(y); % number of training examples
 
+fprintf('First 10 examples from the dataset: \n');
+fprintf(' x = %.0f, y = %.0f \n', [X(1:10,:) y(1:10,:)]');
 
 %% Plotting graph for better visualization
 fprintf('Plotting Data ...\n')
@@ -26,8 +28,8 @@ theta = gradientDescent(X, y, theta, alpha, iterations);
 % print theta to screen
 fprintf('Theta found by gradient descent:\n');
 fprintf('%f\n', theta);
-fprintf('Expected theta values (approx) for the examples.txt dataset\n');
-fprintf(' -3.6303\n  1.1664\n\n');
+%fprintf('Expected theta values (approx) for the examples.txt dataset\n');
+%fprintf(' -3.6303\n  1.1664\n\n');
 
 % Plot the linear fit
 hold on; % keep previous plot visible
